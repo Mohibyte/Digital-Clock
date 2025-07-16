@@ -1,0 +1,71 @@
+
+:root {
+    --aqua: #01ebeb;
+    --black: #000000;
+    --bg-opacity: 0.7;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, var(--aqua), var(--black));
+    background-size: 300% 300%;
+    animation: bgShift 12s ease infinite;
+    color: #fff;
+}
+
+@keyframes bgShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px var(--aqua);
+    letter-spacing: 1px;
+}
+
+.clock {
+    padding: 30px 50px;
+    background: rgba(0, 0, 0, var(--bg-opacity));
+    border-radius: 20px;
+    font-size: 64px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-align: center;
+    box-shadow: 0 0 25px var(--aqua), inset 0 0 10px var(--black);
+    text-shadow: 0 0 10px var(--aqua), 0 0 15px var(--aqua);
+    animation: pulseGlow 4s infinite alternate;
+    transition: all 0.3s ease-in-out;
+}
+
+@keyframes pulseGlow {
+    0% {
+    box-shadow: 0 0 20px var(--aqua), inset 0 0 10px var(--black);
+    }
+    100% {
+    box-shadow: 0 0 35px var(--aqua), inset 0 0 15px var(--aqua);
+    }
+}
+
+@media (max-width: 600px) {
+    .clock {
+    font-size: 36px;
+    padding: 20px 30px;
+    }
+    .title {
+    font-size: 20px;
+    }
+}
